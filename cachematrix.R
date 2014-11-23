@@ -20,9 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 	## method: gets the matrix
 
-	get <- function() {
-		m
-	}
+	get <- function() return(x)
 
 
 	## method: sets the inverse
@@ -34,9 +32,14 @@ makeCacheMatrix <- function(x = matrix()) {
 
 	## method: get the inverse of the matrix
 
-	getInverse <- function() {
-		im
-	}
+	getInverse <- function() return(im)
+
+
+	## list containing a function to set, get, setInverse & getInverse
+	
+    list(set = set, get = get,
+         setInverse = setInverse,
+         getInverse = getInverse)
 
 }
 
@@ -46,9 +49,6 @@ makeCacheMatrix <- function(x = matrix()) {
 ## retrieve the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
-
-	## Return a matrix that is the inverse of 'x'
-
 
 	## get the inverse matrix
 
@@ -71,14 +71,16 @@ cacheSolve <- function(x, ...) {
 
 	## solve the inverse matrix
 
-	m <- solve(matrix)
+	inv <- solve(matrix)
 
 
 	## set the inverse matrix
 
-	x$setInverse(m)
+	x$setInverse(inv)
 	
 	
-	matrix
+	## Return a matrix that is the inverse of 'x'
+	
+	return(inv)
 
 }
