@@ -12,31 +12,31 @@ makeCacheMatrix <- function(x = matrix()) {
 
 	## method: sets the matrix	
 
-    set <- function( matrix ) {
-        m <<- matrix
-        im <<- NULL
-    }
+	set <- function( matrix ) {
+		m <<- matrix
+		im <<- NULL
+	}
 
 
 	## method: gets the matrix
 
-    get <- function() {
-    	m
-    }
+	get <- function() {
+		m
+	}
 
 
 	## method: sets the inverse
 
-    setInverse <- function(inverse) {
-        im <<- inverse
-    }
+	setInverse <- function(inverse) {
+		im <<- inverse
+	}
 
 
-    ## Method: get the inverse of the matrix
+	## Method: get the inverse of the matrix
 
-    getInverse <- function() {
-        im
-    }
+	getInverse <- function() {
+		im
+	}
 
 }
 
@@ -47,7 +47,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
 
-        ## Return a matrix that is the inverse of 'x'
+	## Return a matrix that is the inverse of 'x'
         
         
         
